@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="check" viewBox="0 0 16 16">
+    <title>Check</title>
+    <path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"/>
+  </symbol>
+</svg>
+<div class="container_cover text-white ">
+<nav class="navbar navbar-expand-md navbar-dark bg-black ">
+    <div class="container-fluid nav_hover">
+        <div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">
+            <ul class="nav navbar-nav me-auto ">
+                <li class="nav-item ">
+                    <a class="nav-link" href="#section3">Cotizaciones</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#section4">Conocenos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#section5">Contactanos</a>
+                </li>
+                <li class="nav-item dropdown ">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false"> Portafolio </a>
+                    <ul class="dropdown-menu dropdown-menu-right bg-dark " aria-labelledby="navbarScrollingDropdown">
+                      <% @categoryNav.each do |category| %>
+                        <li class="dropdown-item"><%= link_to category.name, category_path(category.id), :class => "nav-link" %></li>
+                      <% end %>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <div class="mx-auto order-0">
+            <%= link_to "Lords Photography", root_path, :class => "navbar-brand mx-auto" %> 
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".dual-collapse2">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </div>
+        <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <%= link_to "Upload Photo", upload_path, :class => "nav-link" %>
+                </li>
+                <li class="nav-item">
+                  <%= link_to "Add Category", new_category_path, :class => "nav-link" %>
+                </li>
+            </ul>
+        </div>
+        
+    </div>
+</nav>
+    <main class="px-3 mx-auto">
+        <h1 class="font_italic h1">Lords Photography.</h1>
+        <p class="lead">Lords// es un grupo de
+        jóvenes con ideas
+        posmodernistas y tendencias
+        versátiles, que buscan retratar
+        su entorno e ideas, esto utilizando a las
+        tecnologías de información,
+        su entorno inmediato y a la
+        cultura underground como
+        principales herramientas.</p>
+        <p class="lead"><a href="#section2" class="btn btn-lg btn-secondary fw-bold border-white bg-black">Saber Más</a></p>
+</main>
+</div>

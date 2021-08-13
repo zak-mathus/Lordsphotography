@@ -1,0 +1,29 @@
+<div id="gallery" class="text-white">
+    <h2><%= @category.name %>
+      <small class="pull-right"><%= link_to "", edit_category_path %></small>
+    </h2>
+    <% if @images.exists? %>                            
+      <% @images.each_slice(4) do |image| %>
+        <div class="row">
+          <% image.each do |image| %>
+            <div class="col-md-3">
+              <div class="photo photo-type-line">
+                <a href="<%= image.image.url() %>" class="photo-hover" data-lightbox="my-images" data-title="<%= image.image_title %>">
+                <div class="photo-info">
+                <div class="headline"><%= image.image_title %></div>
+                <div class="line"></div>
+                <div class="desc"><%= image.image_description %></div>
+              </div>
+              <div class="mask"></div>
+              </a>
+              <div class="photo-img"><%= image_tag image.image.url(:thumb) %></div>
+            </div>
+          </div>
+          <%end%>  
+        </div>
+      <%end%>  
+      <% else %>
+        <p>There is no images</p>
+    <%end%>
+      
+</div>
